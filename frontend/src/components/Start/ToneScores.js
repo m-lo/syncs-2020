@@ -5,7 +5,7 @@ export let userProfiles = [
 
 ]
 
-const items = [
+let items = [
     {
       id: 'stage-0',
       label: '',
@@ -44,9 +44,9 @@ const items = [
     }
   ];
 
-function addProfile({ username }) {
+export function addProfile(username) {
     let profile = {
-        username: username,
+        username: username ,
         tones: [
             {
                 tone_id: 'anger',
@@ -80,25 +80,27 @@ function addProfile({ username }) {
         ]
     }
     userProfiles.push(profile)
+    console.log(profile)
+    console.log(userProfiles)
 }
 
-export default function ToneScores() {
+export default function ToneScores(profiles) {
     const [user, setUser] = useState()
     let totalScore = 0
-    for (let i = 0; i < profile[tones].length; i++) {
-        totalScore += profile[tones][i]
+    for (let i = 0; i < profiles.tones.length; i++) {
+        totalScore += profiles.tones[i]
     }
     return (
         <div>
-          { userProfiles.map(profile => 
+          { profiles.map(profile => 
           <div>
             <h1>
-                { profile[username] }
+                { profile.username }
             </h1>
             {
-                profile[tones].map(tone => <div>
+                profile.tones.map(tone => <div>
                     <h3>
-                        { tones[tone_id] }
+                        { tone.tone_id }
                     </h3>
 
                 </div>
