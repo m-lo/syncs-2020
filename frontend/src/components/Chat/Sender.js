@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '@atlaskit/button'
-import Form, { Field } from '@atlaskit/form'
+import SendIcon from '@atlaskit/icon/glyph/send'
 import TextField from '@atlaskit/textfield'
 import { analyseTone } from '../utils'
 import { getProfile } from '../Start/ToneScores'
@@ -64,6 +64,7 @@ export default function Sender ({ onSend, username }) {
           >
         send
       </Button>}
+        elemAfterInput={<Button iconAfter={<SendIcon />} onClick={handleSubmit} />}
         />
     </form>
   )

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Tooltip from '@atlaskit/tooltip'
 import Button from '@atlaskit/button'
+import ChevronRightCircleIcon from '@atlaskit/icon/glyph/chevron-right-circle'
 import { TooltipPrimitive } from '@atlaskit/tooltip/styled'
 
 const InlineDialog = styled(TooltipPrimitive)`
@@ -31,9 +32,10 @@ function PromptResponse({ tones }) {
       content={ "It sounds like your friend might be feeling " + tonesString }
       style={{margin: 'auto'}}>
       <Button 
-        appearance="primary"
-        style={{backgroundColor: '#5ce1ff'}}>
-          { 'Start the conversation >' }
+        style={{ borderRadius: 40, padding: '0 4px 0px 12px' }}
+        iconAfter={<ChevronRightCircleIcon size='medium' />}
+      >
+      <span style={{ fontSize: 12 }}>Start the Conversation</span>
       </Button>
     </Tooltip>
   );
