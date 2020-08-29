@@ -11,7 +11,6 @@ import { getProfile } from '../Start/ToneScores'
 export default function Chat({ username }) {
   const [messages, setMessages] = useState([])
   const profile = getProfile(username)
-
   // PROFILE TONE
   // [
 //     {tone_id: "anger", score: 0.931034
@@ -37,6 +36,7 @@ export default function Chat({ username }) {
     if (msg) analyseEffect(username, msg.message)
   }, [messages])
 
+
   const analyseEffect = async (username, msg) => {
     // Analysis looks like
     // {
@@ -53,12 +53,25 @@ export default function Chat({ username }) {
     const res = await analyseTone(msg)
     
     let analysisTones = res.document_tone.tones
-
+    console.log(analysisTones)
     profileTones.map(tone => {
       let atone = analysisTones.find(a => a.tone_id === tone.tone_id)
-      if (atone) tone.score += atone.score
+      const window_size = 5
+      if (atone) {
+        tone.past_scores.unshift(atone.score) // Place newest score at index 0
+        if (tone.past_scores.length >= window_size) {
+          tone.score_valid = true
+          tone.sliding_avg = tone.past_scores.reduce((a,b) => {return a + b}, 0) / window_size
+          if (tone.past_scores.length > window_size) {
+            tone.past_scores.pop() // Eject oldest score off the end.
+            tone.sliding_avg = tone.past_scores.reduce((a,b) => {return a + b}, 0) / window_size
+          }
+        }
+        
+      }
     })
-  }
+    console.log(profileTones)
+  } // TODO: The scores arrays are only accessed if Watson returns some value for their respective tones. Is this intended?
   
   // TODO
   const tones = [
@@ -85,7 +98,16 @@ export default function Chat({ username }) {
     addMessage(payload)
   }
 
-  const showPrompt = messages.length > 3 // TODO
+  // Show the button if at least one tone's array is valid
+  var showPrompt = false
+  const threshold = 0.95
+  for (let i in profileTones) {
+    console.log(profileTones[i].score_valid)
+    if (profileTones[i].sliding_avg >= threshold) {
+      showPrompt = true
+    }
+  }
+
 
   return (
     <div style={{ height: '100%', display: 'flex', position: 'relative', flexDirection: 'column', justifyContent: 'space-between' }}>

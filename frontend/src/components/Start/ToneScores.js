@@ -55,37 +55,51 @@ export function addProfile(username) {
         tones: [
             {
                 tone_id: 'anger',
-                score: 0.0,
+                past_scores: [],
+                sliding_avg : 0.0,
+                score_valid : false // Becomes true when the array has been written to [window_size] times
 
             }, 
             {
                 tone_id: 'fear',
-                score: 0.0
+                past_scores: [],
+                sliding_avg : 0.0,
+                score_valid : false
             }, 
             {
                 tone_id: 'joy',
-                score: 0.0
+                past_scores: [],
+                sliding_avg : 0.0,
+                score_valid : false
             }, 
             {
                 tone_id: 'sadness',
-                score: 0.0
+                past_scores: [],
+                sliding_avg : 0.0,
+                score_valid : false
             }, 
             {
-                tone_id: 'analytic',
-                score: 0.0
+                tone_id: 'analytical',
+                past_scores: [],
+                sliding_avg : 0.0,
+                score_valid : false
             }, 
             {
                 tone_id: 'confident',
-                score: 0.0
+                past_scores: [],
+                sliding_avg : 0.0,
+                score_valid : false
             }, 
             {
                 tone_id: 'tentative',
-                score: 0.0
+                past_scores: [],
+                sliding_avg : 0.0,
+                score_valid : false
             }
         ]
     }
     userProfiles.push(profile)
-    console.log(profile)
+    console.log(`The user '${username}' has been added`)
     console.log(userProfiles)
 }
 

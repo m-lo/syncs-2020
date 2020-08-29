@@ -17,15 +17,19 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "ibm-watson": "^5.7.0",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
+    "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
     "styled-components": "^5.1.1",
     "tachyons": "^4.12.0",
-    "tachyons-components": "^1.0.1"
+    "tachyons-components": "^1.0.1",
+    "yarn": "^1.22.5"
   },
   "scripts": {
     "start": "react-scripts start",
