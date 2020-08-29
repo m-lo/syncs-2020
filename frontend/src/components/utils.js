@@ -1,6 +1,8 @@
+import { state, useState } from 'react'
 import ToneAnalyzer from 'ibm-watson/tone-analyzer/v3'
 import { IamAuthenticator } from 'ibm-watson/auth'
 
+/*
 const [tone, setTone] = useState()
   const toneAnalyzer = new ToneAnalyzer({
     version: '2017-09-21',
@@ -23,3 +25,13 @@ const [tone, setTone] = useState()
     .catch(err => {
       console.log('error:', err)
     })
+*/
+export function generateTone(score, id, name) {
+  return (
+    {
+      score: score,
+      tone_id: id,
+      tone_name: name
+    }
+  )
+}
