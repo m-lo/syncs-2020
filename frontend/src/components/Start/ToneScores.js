@@ -44,6 +44,14 @@ let items = [
     }
   ];
 
+export function getProfile(username) {
+    for(let i = 0; i < userProfiles.length; i++) {
+        if (userProfiles[i][username] === username) {
+            return userProfiles[i]
+        }
+    }
+}
+
 export function addProfile(username) {
     let profile = {
         username: username ,

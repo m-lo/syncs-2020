@@ -31,7 +31,7 @@ export default function Chat({ username }) {
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
       <Messages messages={messages} username={username} />
       <div style={{ float: 'bottom' }}>
-        <Sender onSend={handleSend} />
+        <Sender onSend={ handleSend, username } />
       </div>
     </div>
   )
