@@ -6,4 +6,8 @@ export default {
     component: Chat,
   }
 
-export const ChatStory = () => <Chat />
+export const ChatStory = () => <div>
+  <Chat username='marcus' />
+  <Chat username='anthy' />
+  
+  </div>
