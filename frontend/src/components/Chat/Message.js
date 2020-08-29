@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import Avatar from '@atlaskit/avatar'
+import { getAvatar } from './avatars'
 
 export default function Message({ message, isOwner }) {
   const { message: msg, username, timestamp } = message
@@ -17,7 +18,7 @@ export default function Message({ message, isOwner }) {
         <Avatar
           appearance='circle'
           size='medium'
-          src='https://hello.atlassian.net/secure/projectavatar?pid=30630'
+          src={getAvatar(username)}
         />
         <div style={{ display: 'flex', paddingLeft: 8, flexDirection: 'column' }}>
           <div style={{ fontSize: 12 }}>
