@@ -6,4 +6,4 @@ export default {
     component: ToneScores,
   }
 
-export const Scores = () => <ToneScores />
+export const Score = () => <ToneScores />
