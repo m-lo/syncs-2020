@@ -1,11 +1,14 @@
-import React from 'react';
-import ToneAnalyzer from 'ibm-watson/tone-analyzer/v3';
+import React from 'react'
+import ToneAnalyzer from 'ibm-watson/tone-analyzer/v3'
+import { IamAuthenticator } from 'ibm-watson/auth'
+
 
 function App() {
-  //const API_KEY = process.env.REACT_APP_IBM_API_KEY
   const toneAnalyzer = new ToneAnalyzer({
     version: '2017-09-21',
-    iam_apikey: 'o0l0OuMGdb1matKG5cVH1y1aeJYa2MVumkXEYoUGGShN',
+    authenticator: new IamAuthenticator({
+      apikey: 'o0l0OuMGdb1matKG5cVH1y1aeJYa2MVumkXEYoUGGShN',
+    }),
     url: 'https://api.au-syd.tone-analyzer.watson.cloud.ibm.com/instances/61f8a1f0-1263-4c20-8215-ad302d4631fc'
   })
   const text = "Good morning everyone. I see that our quarter four metrics are lower than expected. I know we have had a tough year and moral is down. Can we think of ways to increase our performance next year";
