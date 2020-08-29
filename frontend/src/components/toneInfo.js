@@ -1,43 +1,55 @@
 // Provides representation info for every tone based on ID
 // {
+//   name: 'Anger'
 //   colour: '#ff5e5e',
 //   emoji: '😠',
 //   description: 'Could the sender be feeling some sort of injustice, humiliation, or betrayal?'
 // }
-export const toneInfo = {
+const toneInfo = {
     anger: {
+        name: 'Anger',
         colour: '#ff5e5e',
         emoji: '😠',
-        description: 'Could the sender be feeling some sort of injustice, humiliation, or betrayal?'
+        description: 'Could the sender be feeling some sort of injustice, humiliation, or betrayal?',
+        detail: ['Social media is often an outlet where users can vent, whether it be actively through verbal attack or passive, with silent hostility. Often, someone\'s anger may be evoked if they feel like there has been some injustice, conflict, humiliation, negligence of betrayal.', 
+        'If your messages on social media appear to have an angry tone, consider what\'s happening in your life, and how your friends could help you out. Or if it\'s unintentional, think about how you can change your written tone to communicate more effectively!',
+        'If you notice your friends often seem passively angry, perhaps reach out to them about what could be troubling them. Or, if you find that they may be actively attacking you, consider your relationship and think about what may need to change about it.']
     },
     fear: {
+        name: 'Fear',
         colour: '#6a42e3',
         emoji: '😨',
         description: 'Could the sender be cautious of something? Make sure they\'re hanging on okay!'
     },
     joy: {
+        name: 'Joy',
         colour: '#facf43',
         emoji: '😄',
         description: 'It seems like the sender is having a good time!'
     },
     sadness: {
+        name: 'Sadness',
         colour: '#5e81ff',
         emoji: '😢',
         description: 'It\'s possible the sender is feeling some sort of loss or disadvantage. Make sure they\'re hanging in okay!'
     },
     analytical: {
+        name: 'Analytical',
         colour: '#4ad99b',
         emoji: '🤔',
         description: 'Looks like the sender\'s drawing some conclusions!'
     },
     confident: {
+        name: 'Confident',
         colour: '#f7a145',
         emoji: '🤩',
         description: 'It seems like the sender is assured.'
     },
     tentative: {
+        name: 'Tentative',
         colour: '#f58ec3',
         emoji: '😕',
         description: 'Could the sender be doubting themselves? Don\'t be afraid to let them know their opinions matter!'
     }
 }
+export default toneInfo

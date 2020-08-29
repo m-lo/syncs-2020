@@ -1,7 +1,17 @@
 import React, { useState } from 'react'
+import styled from 'styled-components';
 import Tooltip from '@atlaskit/tooltip'
 import Button from '@atlaskit/button'
+import { TooltipPrimitive } from '@atlaskit/tooltip/styled';
 
+const InlineDialog = styled(TooltipPrimitive)`
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: content-box;
+  font-family: Helvetica;
+  padding: 8px 12px;
+`;
 
 function PromptResponse({ tones }) {
   // Tones - an array of Tones returned by the
@@ -21,11 +31,14 @@ function PromptResponse({ tones }) {
 
   return (
     <Tooltip 
+      component={InlineDialog}
       content={ "It sounds like your friend might be feeling " + tonesString }
-    >
+      onClick={ console.log("test")}
+      style={{margin: 'auto'}}>
       <Button 
-        appearance="primary">
-          Start the conversation.
+        appearance="primary"
+        style={{backgroundColor: '#5ce1ff'}}>
+          { 'Start the conversation >' }
       </Button>
     </Tooltip>
   );
