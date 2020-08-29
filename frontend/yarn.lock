@@ -54,7 +54,7 @@
     tslib "^2.0.0"
     uuid "^3.1.0"
 
-"@atlaskit/page@^12.0.1":
+"@atlaskit/page@^12.0.0", "@atlaskit/page@^12.0.1":
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/@atlaskit/page/-/page-12.0.1.tgz#ceb61ac1dd78847292566919069a3a5f9d17a0fc"
   integrity sha512-gXU8GjxTMu686zx7w5QodZbh+EHyg+8T1cVAl8XaSCwt45GIDRq/C6bf49zfuF6ZlY0GPAJJeLmQwuFbDPaL/Q==
@@ -78,6 +78,16 @@
     "@atlaskit/theme" "^10.0.0"
     exenv "^1.2.2"
     tiny-invariant "^0.0.3"
+    tslib "^2.0.0"
+
+"@atlaskit/progress-tracker@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@atlaskit/progress-tracker/-/progress-tracker-7.0.3.tgz#d3b899a48aa41794937c34f4f2812f1c0d1ee92c"
+  integrity sha512-bk3hRtnP5DZil2zi3UEosRKm+R/pnAZIsnU30lkhyAJHDY26qPeZ2GceB14rkB31k+lNZMoV0PVcrIhzPJSVfw==
+  dependencies:
+    "@atlaskit/page" "^12.0.0"
+    "@atlaskit/theme" "^10.0.0"
+    react-transition-group "^4.4.1"
     tslib "^2.0.0"
 
 "@atlaskit/spinner@^15.0.0":
