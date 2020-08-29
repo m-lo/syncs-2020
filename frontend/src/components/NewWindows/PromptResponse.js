@@ -23,11 +23,7 @@ function PromptResponse({ tones }) {
   //   'tone_id': 'sadness',
   //   'tone_name': 'Sadness'
   // }
-  let tonesString = tones[0].tone_name
-
-  for (let i = 1; i < tones.length; i++) {
-    tonesString += ", " + tones[i].tone_name
-  }
+  const tonesString = tones.map(tone => tone.tone_name).join(', ')
 
   return (
     <Tooltip 
