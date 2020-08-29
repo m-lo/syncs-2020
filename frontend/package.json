@@ -8,6 +8,7 @@
     "@atlaskit/flag": "^14.0.3",
     "@atlaskit/form": "^8.1.2",
     "@atlaskit/icon": "^21.0.3",
+    "@atlaskit/modal-dialog": "^11.1.4",
     "@atlaskit/page": "^12.0.1",
     "@atlaskit/progress-tracker": "^7.0.3",
     "@atlaskit/section-message": "^5.0.3",
