@@ -1,10 +1,10 @@
 import React from 'react'
-import Chat from './components/Chat'
+import Start from './components/Start'
 
 function App() {
   
   return (
-    <Chat />
+    <Start />
   );
 }
 
