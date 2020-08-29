@@ -6,4 +6,4 @@ export default {
     component: TonePage,
   }
 
-export const Tone = () => <TonePage tone_id='sadness'/>
+export const Tone = () => <TonePage tone_id='tentative'/>

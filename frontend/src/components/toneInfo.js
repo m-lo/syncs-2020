@@ -8,7 +8,7 @@
 const toneInfo = {
     anger: {
         name: 'Anger',
-        colour: '#ff5e5e',
+        colour: ['#ff5e5e', '#b11d1d', '#755050'],
         emoji: '😠',
         description: 'Could the sender be feeling some sort of injustice, humiliation, or betrayal?',
         detail: ['Social media is often an outlet where users can vent, whether it be actively through verbal attack or passive, with silent hostility. Often, someone\'s anger may be evoked if they feel like there has been some injustice, conflict, humiliation, negligence of betrayal.', 
@@ -17,7 +17,7 @@ const toneInfo = {
     },
     fear: {
         name: 'Fear',
-        colour: '#6a42e3',
+        colour: ['#15c1d3', '#6a42e3', '#00185a'],
         emoji: '😨',
         description: 'Could the sender be cautious of something? Make sure they\'re hanging on okay!',
         detail: ['Often, social media users express every facet of their lives, even reveal some things they would hide otherwise.',
@@ -25,7 +25,7 @@ const toneInfo = {
     },
     joy: {
         name: 'Joy',
-        colour: '#facf43',
+        colour: ['#facf43', '#ff9600', '#e342b5'],
         emoji: '😄',
         description: 'It seems like the sender is having a good time!',
         detail: [
@@ -34,7 +34,7 @@ const toneInfo = {
     },
     sadness: {
         name: 'Sadness',
-        colour: '#5e81ff',
+        colour: ['#64d2d9', '#5e81ff', '#21373a'],
         emoji: '😢',
         description: 'It\'s possible the sender is feeling some sort of loss or disadvantage. Make sure they\'re hanging in okay!',
         detail: [
@@ -43,7 +43,7 @@ const toneInfo = {
     },
     analytical: {
         name: 'Analytical',
-        colour: '#4ad99b',
+        colour: ['#4ad99b', '#56d44d', '#eeff00'],
         emoji: '🤔',
         description: 'Looks like the sender\'s drawing some conclusions!',
         detail: [
@@ -52,7 +52,7 @@ const toneInfo = {
     },
     confident: {
         name: 'Confident',
-        colour: '#f7a145',
+        colour: ['#f7a145', '#ff5e00', '#cf0035'],
         emoji: '🤩',
         description: 'It seems like the sender is assured.',
         detail: [
@@ -61,7 +61,7 @@ const toneInfo = {
     },
     tentative: {
         name: 'Tentative',
-        colour: '#f58ec3',
+        colour: ['#f58ec3', '#d931d2', '#3f005c'],
         emoji: '😕',
         description: 'Could the sender be doubting themselves? Don\'t be afraid to let them know their opinions matter!',
         detail: [
