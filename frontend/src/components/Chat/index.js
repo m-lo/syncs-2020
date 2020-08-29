@@ -10,12 +10,30 @@ import { getProfile } from '../Start/ToneScores'
 
 export default function Chat({ username }) {
   const [messages, setMessages] = useState([])
-  const [analysis, setAnalysis] = useState([])
+  const profile = getProfile(username)
+
+  // PROFILE TONE
+  // [
+//     {tone_id: "anger", score: 0.931034
+//   },
+//   {tone_id: "fear", score: 0.931034
+//   },
+//   {tone_id: "joy", score: 0
+//   },
+//   {tone_id: "sadness", score: 0.916667
+//   },
+//   {tone_id: "analytic", score: 0
+//   },
+//   {tone_id: "confident", score: 0
+//   },
+//   {tone_id: "tentative", score: 0
+//   }
+// ]
+  let profileTones = profile.tones
 
   useEffect(() => {
     let ownMessages = messages.filter(msg => msg.username === username)
     let msg = ownMessages.slice(-1)[0]
-    console.log('hi', analysis, msg)
     if (msg) analyseEffect(username, msg.message)
   }, [messages])
 
@@ -33,8 +51,7 @@ export default function Chat({ username }) {
     // }
     //}
     const res = await analyseTone(msg)
-    const profile = getProfile(username)
-    let profileTones = profile.tones
+    
     let analysisTones = res.document_tone.tones
 
     profileTones.map(tone => {
@@ -43,6 +60,7 @@ export default function Chat({ username }) {
     })
   }
   
+  // TODO
   const tones = [
     {tone_id: 'sadness',
     tone_name: 'Sadness',
@@ -67,7 +85,7 @@ export default function Chat({ username }) {
     addMessage(payload)
   }
 
-  const showPrompt = messages.length > 3
+  const showPrompt = messages.length > 3 // TODO
 
   return (
     <div style={{ height: '100%', display: 'flex', position: 'relative', flexDirection: 'column', justifyContent: 'space-between' }}>
