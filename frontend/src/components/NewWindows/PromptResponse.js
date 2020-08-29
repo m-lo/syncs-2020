@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, forwardRef } from 'react'
 import styled from 'styled-components'
 import Tooltip from '@atlaskit/tooltip'
 import Button from '@atlaskit/button'
 import ChevronRightCircleIcon from '@atlaskit/icon/glyph/chevron-right-circle'
-import Modal, { ModalTransition } from '@atlaskit/modal-dialog'
+import Modal, { BodyComponentProps, ModalTransition } from '@atlaskit/modal-dialog'
 import TonePage from './TonePage'
 import { TooltipPrimitive } from '@atlaskit/tooltip/styled'
 
@@ -15,6 +15,7 @@ import { TooltipPrimitive } from '@atlaskit/tooltip/styled'
 //   font-family: Helvetica;
 //   padding: 8px 12px;
 // `
+
 
 function PromptResponse({ tones }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -30,6 +31,16 @@ function PromptResponse({ tones }) {
   //   'tone_name': 'Sadness'
   // }
   const tonesString = tones.map(tone => tone.tone_name).join(', ')
+
+  const CustomBody = forwardRef((props, ref) => {
+    return (
+      <TonePage
+        {...props}
+        tone_id='anger'
+        ref={ref}
+      />
+    )
+  })
 
   return (
       // <Tooltip 
@@ -48,7 +59,12 @@ function PromptResponse({ tones }) {
       </Button>
       <ModalTransition>
       {isOpen && (
-        <TonePage tone_id={'tentative'} />
+        <Modal
+        components={{
+          Body: CustomBody,
+        }}
+        onClose={close}
+      />
       )}
     </ModalTransition>
     </>

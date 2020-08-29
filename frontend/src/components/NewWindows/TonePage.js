@@ -4,9 +4,6 @@ import Tooltip from '@atlaskit/tooltip'
 import Button from '@atlaskit/button'
 import { Grid } from '@atlaskit/page'
 import toneInfo from '../toneInfo'
-//import Modal, { ModalTransition } from '@atlaskit/modal-dialog'
-import Modal, { ModalTransition } from '@atlaskit/modal-dialog';
-//import Modal, { ModalTransition } from '@atlaskit/modal';
 
 function TonePage({ tone_id }) {
     
@@ -19,16 +16,8 @@ function TonePage({ tone_id }) {
   const colour1 = toneInfo[tone_id].colour[1]
   const colour2 = toneInfo[tone_id].colour[2]
 
-  const [isOpen, setIsOpen] = useState(true);
-  const close = () => setIsOpen(false);
-  const open = () => setIsOpen(true);
 
   return (
-    <ModalTransition>
-      {isOpen && (
-        <Modal
-          onClose={close}
-        >
           <div
             style={{
               //boxSizing: 'content-box',
@@ -45,11 +34,8 @@ function TonePage({ tone_id }) {
             >
             <div
               style={{
-                  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)',
-                  //boxSizing: 'content-box',
                   backgroundImage: `linear-gradient(190deg, ${colour0}, ${colour1}, ${colour2})`,
-                  //borderRadius: '10px',
-                  padding: '2em 1em 2em 1em',
+                  padding: 40,
                   maxWidth: '100%',
                   maxHeight: '100%',
                   color: '#ffffff'
@@ -57,18 +43,16 @@ function TonePage({ tone_id }) {
               >
               <h1 
                 style={{
-                  fontFamily: 'Courier New', 
-                  fontWeight: 'lighter', 
                   textTransform: 'uppercase', 
                   letterSpacing: '0.2em',
-                  fontSize: '3em'
+                  fontSize: '3em',
+                  lineHeight: 0.2
                   }}
                 >
                 { name + ' ' + emoji}
               </h1>
               <div
                 style={{
-                    fontStyle: 'italic',
                     color: '#ffffff'
                 }}
               >
@@ -78,6 +62,8 @@ function TonePage({ tone_id }) {
               </div>
               <div
                 style={{
+                  fontStyle: 'itatlic',
+                  fontSize: 14,
                   //padding: '0em 0em 0em 0em',
                   color: '#ffffff'
               }}
@@ -86,10 +72,7 @@ function TonePage({ tone_id }) {
               </div>
             </div>
           </div>
-        </Modal>
-      )}
-    </ModalTransition>
-  );
+  )
 }
 
 export default TonePage;

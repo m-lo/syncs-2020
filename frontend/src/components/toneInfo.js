@@ -8,7 +8,7 @@
 const toneInfo = {
     anger: {
         name: 'Anger',
-        colour: ['#ff5e5e', '#b11d1d', '#755050'],
+        colour: ['#ff5e5e', '#b11d1d', '#661c1c'],
         emoji: '😠',
         description: 'Could the sender be feeling some sort of injustice, humiliation, or betrayal?',
         detail: ['Social media is often an outlet where users can vent, whether it be actively through verbal attack or passive, with silent hostility. Often, someone\'s anger may be evoked if they feel like there has been some injustice, conflict, humiliation, negligence of betrayal.', 
