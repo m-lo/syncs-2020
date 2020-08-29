@@ -21,7 +21,7 @@ export default function Message({ message, isOwner }) {
         />
         <div style={{ display: 'flex', paddingLeft: 8, flexDirection: 'column' }}>
           <div style={{ fontSize: 12 }}>
-            {username}
+            {isOwner ? 'me' : username}
           </div>
           <div>
             {msg}

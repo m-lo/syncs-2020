@@ -17,15 +17,12 @@ export default function Start() {
       }}>
         {({ formProps }) => (
           <form {...formProps}>
-            <Field name='username' 
-            defaultValue='' 
-            label='username' 
-            isRequired>
-              {({ fieldProps }) => <TextField {...fieldProps} />}
-            </Field>
-            <Button type='submit'>
+            <Field name='username' defaultValue='' label='username' isRequired>
+              {({ fieldProps }) => <TextField elemAfterInput={<Button type='submit'>
               login
-            </Button>
+            </Button>} {...fieldProps} />}
+            </Field>
+            
           </form>
         )}
       </Form>
