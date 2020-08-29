@@ -11,8 +11,8 @@ export default function Sender ({ onSend, username }) {
   const handleSubmit = (e) => {
     
     e.preventDefault()
+    if (msg != '') onSend(msg)
     setMsg('')
-    onSend(msg)
   }
 
   const handleInput = (e) => {

@@ -10,7 +10,7 @@ export default function Start() {
   const [user, setUser] = useState()
   
   return (
-    user ? <Chat username={user} /> : <div>
+    user ? <Chat username={user} /> : <div style={{ width: 400, margin: 'auto' }}>
       <Form onSubmit={data => {
         setUser(data.username)
         addProfile(data.username)
