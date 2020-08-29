@@ -11,7 +11,7 @@ export default function Message({ message, isOwner }) {
         {moment(timestamp).format('h:mm:ss a')}
       </div>
       <div style={{
-        margin: 8, padding: 12, borderRadius: 4, maxWidth: 300, display: 'flex',
+        margin: 8, padding: 12, borderRadius: 8, maxWidth: 300, display: 'flex',
         boxShadow: `0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048)`
       }}>
         <Avatar
@@ -21,7 +21,7 @@ export default function Message({ message, isOwner }) {
         />
         <div style={{ display: 'flex', paddingLeft: 8, flexDirection: 'column' }}>
           <div style={{ fontSize: 12 }}>
-            {username}
+            {isOwner ? 'me' : username}
           </div>
           <div>
             {msg}

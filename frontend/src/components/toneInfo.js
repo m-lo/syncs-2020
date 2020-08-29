@@ -19,37 +19,54 @@ const toneInfo = {
         name: 'Fear',
         colour: '#6a42e3',
         emoji: '😨',
-        description: 'Could the sender be cautious of something? Make sure they\'re hanging on okay!'
+        description: 'Could the sender be cautious of something? Make sure they\'re hanging on okay!',
+        detail: ['Often, social media users express every facet of their lives, even reveal some things they would hide otherwise.',
+                'Do you ever express things you\'re anxious or scared about online?']
     },
     joy: {
         name: 'Joy',
         colour: '#facf43',
         emoji: '😄',
-        description: 'It seems like the sender is having a good time!'
+        description: 'It seems like the sender is having a good time!',
+        detail: [
+            'FROM RED VELVET!'
+        ]
     },
     sadness: {
         name: 'Sadness',
         colour: '#5e81ff',
         emoji: '😢',
-        description: 'It\'s possible the sender is feeling some sort of loss or disadvantage. Make sure they\'re hanging in okay!'
+        description: 'It\'s possible the sender is feeling some sort of loss or disadvantage. Make sure they\'re hanging in okay!',
+        detail: [
+            'Big sad'
+        ]
     },
     analytical: {
         name: 'Analytical',
         colour: '#4ad99b',
         emoji: '🤔',
-        description: 'Looks like the sender\'s drawing some conclusions!'
+        description: 'Looks like the sender\'s drawing some conclusions!',
+        detail: [
+            'Thinking'
+        ]
     },
     confident: {
         name: 'Confident',
         colour: '#f7a145',
         emoji: '🤩',
-        description: 'It seems like the sender is assured.'
+        description: 'It seems like the sender is assured.',
+        detail: [
+            'Yaassss'
+        ]
     },
     tentative: {
         name: 'Tentative',
         colour: '#f58ec3',
         emoji: '😕',
-        description: 'Could the sender be doubting themselves? Don\'t be afraid to let them know their opinions matter!'
+        description: 'Could the sender be doubting themselves? Don\'t be afraid to let them know their opinions matter!',
+        detail: [
+            'hmmmmmm'
+        ]
     }
 }
 export default toneInfo
