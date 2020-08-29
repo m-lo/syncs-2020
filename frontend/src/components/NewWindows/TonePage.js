@@ -18,28 +18,38 @@ function TonePage({ tone_id }) {
     return (
         <div
           style={{
-            boxShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
             boxSizing: 'content-box',
-            fontFamily: 'Menlo',
-            margin: '2em 20em 2em 20em',
-            height: '60vh',
-            color: '#2a4b70'
+            margin: 'auto',
+            //margin: '2em 20em 2em 20em',
+            padding: '1em 1em 1em 1em',
+            width: '50%',
+            maxWidth: '100%',
+            height: '100%',
+            maxHeight: '100%',
+            position: 'center',
+            color: '#ffffff',
+            overflow: 'auto',
           }}
           >
           <div
             style={{
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)',
+                boxSizing: 'content-box',
                 backgroundImage: 'linear-gradient(#5da4dc,#377dc9,#3a0e37)',
-                borderRadius: '4px',
+                borderRadius: '10px',
                 padding: '2em 5em 2em 5em',
-                height: '60vh',
-                color: '#2a4b70'
-              }}>
+                maxWidth: '100%',
+                maxHeight: '100%',
+                color: '#ffffff',
+              }}
+            >
             <h1>
-              { name + ' ' + emoji} 
+              { name + ' ' + <span style={{color: 'blue'}}> emoji </span> }
             </h1>
             <div
               style={{
-                  color: '#276cab'
+                  fontStyle: 'italic',
+                  color: '#ffffff'
               }}
             >
               <h3>
@@ -48,11 +58,11 @@ function TonePage({ tone_id }) {
             </div>
             <div
               style={{
-                padding: '0em 0em 0em 0em',
-                color: '#5075fa'
+                padding: '0em 0em 0em 0 em',
+                color: '#ffffff'
             }}
             >
-              { detail.map(line => <h5> {line }</h5>)}
+              { detail.map(line => <p> {line }</p>) }
             </div>
           </div>
           
