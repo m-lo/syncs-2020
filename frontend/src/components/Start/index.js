@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import Chat from '../Chat'
 import Button from '@atlaskit/button'
-import Form, { Field, FormFooter, HelperMessage } from '@atlaskit/form'
+import Form, { Field, FormFooter } from '@atlaskit/form'
 import Textfield from '@atlaskit/textfield'
 
 
