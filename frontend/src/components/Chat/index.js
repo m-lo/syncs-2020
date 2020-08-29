@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import io from 'socket.io-client'
 import moment from 'moment'
+import Avatar from '@atlaskit/avatar'
+import { getAvatar } from './avatars'
+
 
 import Messages from './Messages'
 import Sender from './Sender'
@@ -106,6 +109,16 @@ export default function Chat({ username }) {
   return (
     <div style={{ height: '100%', display: 'flex', position: 'relative', flexDirection: 'column', justifyContent: 'space-between' }}>
       <div style={{ height: '100%', overflow: 'auto' }}>
+        <div style={{ display: 'flex' }}>
+          <Avatar
+              appearance='circle'
+              size='large'
+              src={getAvatar(username)}
+            />
+          <div style={{ fontWeight: 700, alignSelf: 'center', paddingLeft: 8, fontSize: 28 }}>
+            @{username}
+          </div>
+        </div>
         <Messages messages={messages} username={username} />
       </div>
       <div style={{ float: 'bottom', display: 'flex', flexDirection: 'column' }}>
