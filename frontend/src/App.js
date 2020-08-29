@@ -3,8 +3,9 @@ import Chat from './components/Chat'
 import PromptResponse from './components/NewWindows/PromptResponse'
 
 import { generateTone } from './components/utils'
+import Start from './components/Start'
 
-function App() {
+export default function App() {
   
   return (
     <>
@@ -16,8 +17,8 @@ function App() {
          generateTone(0.961411, 'tentative', 'Tentative')
         ]
       }/>
+    
+    <Start />
     </>
   );
 }
-
-export default App;
