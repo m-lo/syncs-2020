@@ -9,10 +9,11 @@ import Messages from './Messages'
 import Sender from './Sender'
 import PromptResponse from '../NewWindows/PromptResponse'
 import { analyseTone } from '../utils'
-import { getProfile } from '../Start/ToneScores'
+import { getProfile, userProfiles, addProfile } from '../Start/ToneScores'
 
 export default function Chat({ username }) {
   const [messages, setMessages] = useState([])
+  const [prevAnalysis, setPrevAnalysis] = useState()
   const profile = getProfile(username)
   // PROFILE TONE
   // [
@@ -34,9 +35,15 @@ export default function Chat({ username }) {
   let profileTones = profile.tones
 
   useEffect(() => {
-    let ownMessages = messages.filter(msg => msg.username === username)
-    let msg = ownMessages.slice(-1)[0]
-    if (msg) analyseEffect(username, msg.message)
+    let others = messages.filter(msg => msg.username !== username)
+    let msg = others.pop()
+    if (msg && msg !== prevAnalysis) {
+      if (!userProfiles.find(profile => profile.username === msg.username)) {
+        addProfile(msg.username)
+      }
+      analyseEffect(msg.username, msg.message)
+      setPrevAnalysis(msg)
+    }
   }, [messages])
 
 
@@ -57,7 +64,8 @@ export default function Chat({ username }) {
     
     let analysisTones = res.document_tone.tones
     console.log(analysisTones)
-    profileTones.map(tone => {
+    let analyseProfile = userProfiles.find(profile => profile.username === username)
+    analyseProfile.tones.map(tone => {
       let atone = analysisTones.find(a => a.tone_id === tone.tone_id)
       const window_size = 5
       if (atone) {
@@ -73,7 +81,7 @@ export default function Chat({ username }) {
         
       }
     })
-    console.log(profileTones)
+    console.log(analyseProfile)
   } // TODO: The scores arrays are only accessed if Watson returns some value for their respective tones. Is this intended?
   
   // TODO
@@ -103,8 +111,9 @@ export default function Chat({ username }) {
   }
 
   // Show the button if at least one tone's array is valid
-  const threshold = 0.95
-  const showPrompt = profileTones.some(tone => tone.sliding_avg >= threshold)
+  const threshold = 0.4
+  console.log('profiles', userProfiles)
+  const showPrompt = userProfiles.some(p => p.username !== username && p.tones.some(t => t.sliding_avg >= threshold))
 
   return (
     <div style={{ height: '100%', display: 'flex', position: 'relative', flexDirection: 'column', justifyContent: 'space-between' }}>
