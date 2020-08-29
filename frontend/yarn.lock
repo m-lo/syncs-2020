@@ -80,7 +80,6 @@
     tslib "^2.0.0"
     uuid "^3.1.0"
 
-"@atlaskit/page@^12.0.0", "@atlaskit/page@^12.0.1":
 "@atlaskit/motion@^0.4.0":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/motion/-/motion-0.4.2.tgz#91b61feda8f03a21ed92c5218381410ce3ce8e4f"
@@ -89,7 +88,7 @@
     "@emotion/core" "^10.0.9"
     tslib "^2.0.0"
 
-"@atlaskit/page@^12.0.1":
+"@atlaskit/page@^12.0.0", "@atlaskit/page@^12.0.1":
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/@atlaskit/page/-/page-12.0.1.tgz#ceb61ac1dd78847292566919069a3a5f9d17a0fc"
   integrity sha512-gXU8GjxTMu686zx7w5QodZbh+EHyg+8T1cVAl8XaSCwt45GIDRq/C6bf49zfuF6ZlY0GPAJJeLmQwuFbDPaL/Q==
@@ -115,7 +114,6 @@
     tiny-invariant "^0.0.3"
     tslib "^2.0.0"
 
-<<<<<<< HEAD
 "@atlaskit/progress-tracker@^7.0.3":
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@atlaskit/progress-tracker/-/progress-tracker-7.0.3.tgz#d3b899a48aa41794937c34f4f2812f1c0d1ee92c"
@@ -124,7 +122,8 @@
     "@atlaskit/page" "^12.0.0"
     "@atlaskit/theme" "^10.0.0"
     react-transition-group "^4.4.1"
-=======
+    tslib "^2.0.0"
+
 "@atlaskit/section-message@^5.0.3":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@atlaskit/section-message/-/section-message-5.0.3.tgz#22f182e032d6a8945df7d26d7800d0988553c9a1"
@@ -133,7 +132,6 @@
     "@atlaskit/button" "^14.0.0"
     "@atlaskit/icon" "^21.0.0"
     "@atlaskit/theme" "^10.0.0"
->>>>>>> 203474d10947cb637529957f56527531fe8b68c7
     tslib "^2.0.0"
 
 "@atlaskit/spinner@^15.0.0":

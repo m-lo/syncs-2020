@@ -1,5 +1,5 @@
 import React from 'react'
-import ToneScores from '../components/NewWindows/ToneScores'
+import ToneScores from '../components/Start/ToneScores'
 
 export default {
     title: 'Screens/ToneScores',
