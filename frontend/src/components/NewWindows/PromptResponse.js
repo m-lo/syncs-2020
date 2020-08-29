@@ -48,7 +48,7 @@ function PromptResponse({ tones }) {
       </Button>
       <ModalTransition>
       {isOpen && (
-        <TonePage tone_id={'sadness'} />
+        <TonePage tone_id={'tentative'} />
       )}
     </ModalTransition>
     </>
