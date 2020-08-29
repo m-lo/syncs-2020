@@ -5,50 +5,17 @@ import io from 'socket.io'
 
 const app = express()
 const server = http.createServer(app)
-const sio = io(server)
+const socketIO = io(server)
 const port = 5002
 
 app.use(cors())
 
-var clients = {}
+server.listen(port)
+console.log('Started on port ' + port)
 
-sio.on('connection', function(client) {
-  client.on('login', e => {
-    let uid = e.id
-    if (!uid) return
-
-    client.uid = uid;
-    if (clients[uid]) {
-      clients[uid].push(client)
-    } else {
-      clients[uid] = [client]
-    }
-  })
-
-  client.on('message', e => {
-    let tid = e.to;
-    let sid = client.uid
-
-    if(tid && clients[tid]) clients[tid].forEach(c => { c.emit('message', e) })
-    if(sid && clients[sid]) clients[sid].forEach(c => { c.emit("message", e) })
-  })
-
-  client.on('disconnect', function() {
-    if (!client.uid || !clients[client.uid]) return
-
-    let targets = clients[client.uid]
-    for (let i = 0; i < targets.length; ++i) {
-      if (targets[i] == client) {
-        targetClients.splice(i, 1)
-      }
-    }
-  })
+socketIO.on('connection', socket => {
+  socket.on('client:message', data => { socket.broadcast.emit('server:message', data) })
+  socket.on('disconnect', () => { })
 })
-
-app.get("/users", (req, res) => {
-  res.send({ data: users })
-})
-
-server.listen(port, () => console.log('listening on ' + port))
 
 export default app

@@ -81,6 +81,7 @@ export default function Chat({ username }) {
   ]
 
   const addMessage = (message) => {
+    console.log('adding message', message)
     setMessages([...messages, message])
   }
 
@@ -93,21 +94,14 @@ export default function Chat({ username }) {
       message,
       timestamp: moment().unix()
     }
-
+    console.log('sending', message)
     socket.emit('client:message', payload)
     addMessage(payload)
   }
 
   // Show the button if at least one tone's array is valid
-  var showPrompt = false
   const threshold = 0.95
-  for (let i in profileTones) {
-    console.log(profileTones[i].score_valid)
-    if (profileTones[i].sliding_avg >= threshold) {
-      showPrompt = true
-    }
-  }
-
+  const showPrompt = profileTones.some(tone => tone.sliding_avg >= threshold)
 
   return (
     <div style={{ height: '100%', display: 'flex', position: 'relative', flexDirection: 'column', justifyContent: 'space-between' }}>

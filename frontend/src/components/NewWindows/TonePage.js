@@ -19,8 +19,6 @@ function TonePage({ tone_id }) {
   const colour1 = toneInfo[tone_id].colour[1]
   const colour2 = toneInfo[tone_id].colour[2]
 
-  console.log(tone_id)
-
   const [isOpen, setIsOpen] = useState(true);
   const close = () => setIsOpen(false);
   const open = () => setIsOpen(true);
