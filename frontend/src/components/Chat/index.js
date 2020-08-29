@@ -19,7 +19,7 @@ export default function Chat({ username }) {
     const payload = {
       username,
       message,
-      timestamp: moment().format()
+      timestamp: moment().unix()
     }
 
     socket.emit('client:message', payload)

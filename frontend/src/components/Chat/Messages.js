@@ -4,7 +4,7 @@ import Message from './Message'
 export default function Messages ({ messages, username }) {
     return (
         <div>
-            {messages.map((msg, i) => <Message key={i} message={msg} isOwner={username === msg.username} /> )}
+            {messages.map((msg, i) => <div style={{ margin: 16 }}><Message key={i} message={msg} isOwner={username === msg.username} /></div> )}
         </div>
     )
 }
