@@ -33,7 +33,6 @@ function PromptResponse({ tones }) {
     <Tooltip 
       component={InlineDialog}
       content={ "It sounds like your friend might be feeling " + tonesString }
-      onClick={ console.log("test")}
       style={{margin: 'auto'}}>
       <Button 
         appearance="primary"

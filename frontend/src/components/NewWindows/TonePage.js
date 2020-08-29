@@ -18,7 +18,6 @@ function TonePage({ tone_id }) {
     return (
         <div
           style={{
-            backgroundImage: 'linear-gradient(#f67a36,#ed008c)',
             boxShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
             boxSizing: 'content-box',
             fontFamily: 'Menlo',
