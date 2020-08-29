@@ -8,10 +8,10 @@ export default {
 }
 
 export const ChatStory = () => <div style={{ display: 'flex' }}>
-  <div>
+  <div style={{ width: 500, height: 600, margin: 12 }}>
     <Chat username='marcus' />
   </div>
-  <div>
+  <div style={{ width: 500, height: 600, margin: 12 }}>
     <Chat username='anthy' />
   </div>
 </div>
