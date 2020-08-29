@@ -1,10 +1,10 @@
 import React from 'react'
 import Message from './Message'
 
-export default function Messages ({ messages }) {
+export default function Messages ({ messages, username }) {
     return (
         <div>
-            {messages.map((msg, i) => <Message key={i} timestamp={msg?.timestamp} username={msg?.username} message={msg?.message} isOwner={msg?.isOwner} /> )}
+            {messages.map((msg, i) => <Message key={i} message={msg} isOwner={username === msg.username} /> )}
         </div>
     )
 }

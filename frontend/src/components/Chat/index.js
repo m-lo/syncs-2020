@@ -23,14 +23,14 @@ export default function Chat({ username }) {
     }
 
     socket.emit('client:message', payload)
-    payload.isOwner = true
     addMessage(payload)
   }
 
   
   return (
     <div>
-      <Messages messages={messages} />
+      <div>{username}</div>
+      <Messages messages={messages} username={username} />
       <Sender onSend={handleSend} />
     </div>
   )

@@ -1,6 +1,6 @@
-import { state, useState } from 'react'
-import ToneAnalyzer from 'ibm-watson/tone-analyzer/v3'
-import { IamAuthenticator } from 'ibm-watson/auth'
+// import { state, useState } from 'react'
+// import ToneAnalyzer from 'ibm-watson/tone-analyzer/v3'
+// import { IamAuthenticator } from 'ibm-watson/auth'
 
 /*
 const [tone, setTone] = useState()

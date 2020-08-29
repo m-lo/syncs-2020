@@ -9,7 +9,7 @@ export default function App() {
   
   return (
     <>
-    <Chat />
+    <Start />
     <PromptResponse
       tones={
         [generateTone(0.819204, 'sadness', 'Sadness'),
@@ -18,7 +18,6 @@ export default function App() {
         ]
       }/>
     
-    <Start />
     </>
   );
 }

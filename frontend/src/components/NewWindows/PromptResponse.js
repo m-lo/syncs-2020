@@ -21,7 +21,8 @@ function PromptResponse({ tones }) {
 
   return (
     <Tooltip 
-      content={ "It sounds like your friend might be feeling " + tonesString }>
+      content={ "It sounds like your friend might be feeling " + tonesString }
+    >
       <Button 
         appearance="primary">
           Start the conversation.

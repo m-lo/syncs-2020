@@ -1,11 +1,12 @@
 import React from 'react'
 
-export default function Message ({ isOwner, username, message, timestamp }) {
+export default function Message ({ message, isOwner }) {
+    const { message: msg, username, timestamp } = message
     return (
         <div>
             <p>
                 {timestamp}
-                {isOwner ? 'me: ' + message : username + ': ' + message}
+                {isOwner ? 'me: ' + msg : username + ': ' + msg}
             </p>
         </div>
     )
