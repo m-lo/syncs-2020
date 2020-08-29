@@ -54,6 +54,13 @@
     tslib "^2.0.0"
     uuid "^3.1.0"
 
+"@atlaskit/page@^12.0.1":
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/@atlaskit/page/-/page-12.0.1.tgz#ceb61ac1dd78847292566919069a3a5f9d17a0fc"
+  integrity sha512-gXU8GjxTMu686zx7w5QodZbh+EHyg+8T1cVAl8XaSCwt45GIDRq/C6bf49zfuF6ZlY0GPAJJeLmQwuFbDPaL/Q==
+  dependencies:
+    tslib "^2.0.0"
+
 "@atlaskit/popper@^5.0.0":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@atlaskit/popper/-/popper-5.0.1.tgz#0b54de685904c644b4fb38259f1578880c4a2a15"

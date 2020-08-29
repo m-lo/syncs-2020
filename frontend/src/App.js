@@ -1,7 +1,7 @@
 import React from 'react'
 import Chat from './components/Chat'
 import PromptResponse from './components/NewWindows/PromptResponse'
-
+import TonePage from './components/NewWindows/TonePage'
 import { generateTone } from './components/utils'
 import Start from './components/Start'
 
@@ -17,6 +17,9 @@ export default function App() {
          generateTone(0.961411, 'tentative', 'Tentative')
         ]
       }/>
+    <TonePage
+      tone_id='anger'
+    />
     
     <Start />
     </>
