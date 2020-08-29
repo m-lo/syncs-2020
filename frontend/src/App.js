@@ -8,8 +8,11 @@ import Start from './components/Start'
 export default function App() {
   
   return (
-    <div style={{ width: 500, height: 600, margin: 'auto', boxShadow: `0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048)` }}>
+    <div style={{ position: 'absolute', background: '#fff', width: '100%', height: '100%' }}>
+        <div style={{ width: 400, height: 640, margin: 'auto', marginTop: 40, padding: 24, borderRadius: 12, background: '#fff',
+        boxShadow: `20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff` }}>
       <Start />    
+    </div>
     </div>
   );
 }

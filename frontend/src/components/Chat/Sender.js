@@ -29,7 +29,7 @@ export default function Sender ({ onSend, username }) {
           >
         send
       </Button>}
-        elemAfterInput={<Button iconAfter={<SendIcon />} onClick={handleSubmit} />}
+        elemAfterInput={<Button appearance='primary' iconAfter={<SendIcon />} onClick={handleSubmit} />}
         />
     </form>
   )

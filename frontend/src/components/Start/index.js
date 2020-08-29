@@ -10,7 +10,7 @@ export default function Start() {
   const [user, setUser] = useState()
   
   return (
-    user ? <Chat username={user} /> : <div style={{ width: 400, margin: 'auto' }}>
+    user ? <Chat username={user} /> : <div style={{ width: 320, margin: 'auto', paddingTop: '40%' }}>
       <Form onSubmit={data => {
         setUser(data.username)
         addProfile(data.username)
@@ -18,11 +18,10 @@ export default function Start() {
         {({ formProps }) => (
           <form {...formProps}>
             <Field name='username' defaultValue='' label='username' isRequired>
-              {({ fieldProps }) => <TextField elemAfterInput={<Button type='submit'>
+              {({ fieldProps }) => <TextField elemAfterInput={<Button appearance='primary' type='submit'>
               login
             </Button>} {...fieldProps} />}
             </Field>
-            
           </form>
         )}
       </Form>
