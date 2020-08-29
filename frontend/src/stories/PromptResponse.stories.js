@@ -7,7 +7,7 @@ export default {
   }
 
 export const Prompt = () => <PromptResponse tones={[
-  {tone_name: 'happy'},
-  {tone_name: 'depression'},
-  {tone_name: 'hates themselves'},
+  {tone_id: 'sadness',
+  tone_name: 'Sadness',
+  score: '0.512431'}
 ]} />
