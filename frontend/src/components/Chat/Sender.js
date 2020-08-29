@@ -43,7 +43,6 @@ export default function Sender ({ onSend, username }) {
       while (j < profileTones.length) {
         if (analysisTones[i].tone_id === profileTones[j].tone_id) {
           profileTones[i].tone_id += analysisTones[i].tone_id
-          
         }
         j++
       }
