@@ -1,11 +1,9 @@
 import React from 'react'
 import Start from './components/Start'
 
-function App() {
+export default function App() {
   
   return (
     <Start />
   );
 }
-
-export default App;

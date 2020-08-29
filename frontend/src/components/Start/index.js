@@ -8,7 +8,8 @@ import Textfield from '@atlaskit/textfield'
 export default function Start() {
   const [user, setUser] = useState()
   return (
-    user ? <Chat user={user} /> : <Form
+    user ? <Chat user={user} /> : <div>
+      <Form
       onSubmit={(formState) =>
         console.log('form submitted', formState)
       }
@@ -22,17 +23,11 @@ export default function Start() {
               </Fragment>
             )}
           </Field>
-          <Field name="password">
-            {({ fieldProps }) => (
-              <Fragment>
-                <Textfield {...fieldProps} />
-              </Fragment>
-            )}
-          </Field>
           <FormFooter>
             <Button type="submit" appearance="primary">Login</Button>
           </FormFooter>
         </form>
       )}
     </Form>
+      </div>
   )}
