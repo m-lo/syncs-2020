@@ -20,7 +20,6 @@ function TonePage({ tone_id }) {
   return (
           <div
             style={{
-              //boxSizing: 'content-box',
               margin: 'auto',
               width: '100%',
               maxWidth: '100%',

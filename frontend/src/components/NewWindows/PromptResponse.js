@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Tooltip from '@atlaskit/tooltip'
 import Button from '@atlaskit/button'
 import ChevronRightCircleIcon from '@atlaskit/icon/glyph/chevron-right-circle'
-import Modal, { BodyComponentProps, ModalTransition } from '@atlaskit/modal-dialog'
+import Modal, { ModalTransition } from '@atlaskit/modal-dialog'
 import TonePage from './TonePage'
 import { TooltipPrimitive } from '@atlaskit/tooltip/styled'
 
