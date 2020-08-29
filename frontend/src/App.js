@@ -1,30 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ToneAnalyzer from 'ibm-watson/tone-analyzer/v3'
 import { IamAuthenticator } from 'ibm-watson/auth'
 
 
 function App() {
-
-  const test = {
-    "utterances": [
-      {
-        "text": "Hello, I'm having a problem with your product.",
-        "user": "customer"
-      },
-      {
-        "text": "OK, let me know what's going on, please.",
-        "user": "agent"
-      },
-      {
-        "text": "Well, nothing is working :(",
-        "user": "customer"
-      },
-      {
-        "text": "Sorry to hear that.",
-        "user": "agent"
-      }
-    ]
-  }
+  const [tone, setTone] = useState()
   const toneAnalyzer = new ToneAnalyzer({
     version: '2017-09-21',
     authenticator: new IamAuthenticator({
@@ -41,13 +21,13 @@ function App() {
   
   toneAnalyzer.tone(toneParams)
     .then(toneAnalysis => {
-      console.log(JSON.stringify(toneAnalysis, null, 2))
+      setTone(JSON.stringify(toneAnalysis, null, 2))
     })
     .catch(err => {
       console.log('error:', err)
     })
   return (
-    <div>hi</div>
+    <pre>{tone || 'loading...'}</pre>
   );
 }
 
