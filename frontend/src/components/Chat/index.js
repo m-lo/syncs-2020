@@ -43,7 +43,7 @@ export default function Chat({ username }) {
         {showPrompt && <div style={{ marginBottom: 16, alignSelf: 'center' }}>
           <PromptResponse tones={tones} />
         </div>}
-        <Sender onSend={handleSend} />
+        <Sender onSend={handleSend} username={username} />
       </div>
     </div>
   )
