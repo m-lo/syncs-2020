@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 import Tooltip from '@atlaskit/tooltip'
 import Button from '@atlaskit/button'
-import { TooltipPrimitive } from '@atlaskit/tooltip/styled';
+import { TooltipPrimitive } from '@atlaskit/tooltip/styled'
 
 const InlineDialog = styled(TooltipPrimitive)`
   background: white;
@@ -11,7 +11,7 @@ const InlineDialog = styled(TooltipPrimitive)`
   box-sizing: content-box;
   font-family: Helvetica;
   padding: 8px 12px;
-`;
+`
 
 function PromptResponse({ tones }) {
   // Tones - an array of Tones returned by the
