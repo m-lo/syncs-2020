@@ -1,5 +1,6 @@
 import React from 'react'
 import Chat from '../components/Chat'
+import Message from '../components/Chat/Message'
 
 export default {
     title: 'Screens/Chat',
@@ -9,5 +10,4 @@ export default {
 export const ChatStory = () => <div>
   <Chat username='marcus' />
   <Chat username='anthy' />
-  
-  </div>
+</div>
