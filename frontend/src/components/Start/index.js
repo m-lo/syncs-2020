@@ -10,16 +10,16 @@ export default function Start() {
   return (
     user ? <Chat user={user} /> : <div>
       <Form
-      onSubmit={(formState) =>
-        console.log('form submitted', formState)
+      onSubmit={(user) =>
+        setUser(user)
       }
     >
-      {({ formProps }) => (
-        <form {...formProps}>
+      {({ props }) => (
+        <form {...props}>
           <Field name="username">
             {({ fieldProps }) => (
               <Fragment>
-                <Textfield {...fieldProps} />
+                <Textfield {...props} />
               </Fragment>
             )}
           </Field>
