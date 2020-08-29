@@ -12,20 +12,19 @@ const toneAnalyzer = new ToneAnalyzer({
   url: 'https://api.au-syd.tone-analyzer.watson.cloud.ibm.com/instances/61f8a1f0-1263-4c20-8215-ad302d4631fc'
 })
 
-export function analyseTone(text) {
+export async function analyseTone(text) {
   const toneParams = {
     toneInput: { 'text': text },
     contentType: 'application/json',
-  };
-  
-  toneAnalyzer.tone(toneParams)
-    .then(toneAnalysis => {
-      console.log(toneAnalysis)
-      return JSON.stringify(toneAnalysis, null, 2)
-    })
-    .catch(err => {
-      console.log('error:', err)
-    })
+  }
+
+  let res
+  try {
+    res = await toneAnalyzer.tone(toneParams)
+  } catch (e) {
+    console.log(e)
+  }
+  return res?.result
 }
 
 export function generateTone(score, id, name) {

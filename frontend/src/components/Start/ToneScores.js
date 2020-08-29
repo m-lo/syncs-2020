@@ -45,11 +45,8 @@ let items = [
   ];
 
 export function getProfile(username) {
-    for(let i = 0; i < userProfiles.length; i++) {
-        if (userProfiles[i][username] === username) {
-            return userProfiles[i]
-        }
-    }
+    let profile = userProfiles.filter(profile => profile?.username === username)
+    if (profile) return profile[0]
 }
 
 export function addProfile(username) {
