@@ -13,6 +13,10 @@ function TonePage({ tone_id }) {
     const emoji = toneInfo[tone_id].emoji 
     const description = toneInfo[tone_id].description
     const detail = toneInfo[tone_id].detail
+    //const colour = toneInfo[tone_id].colour
+    const colour0 = toneInfo[tone_id].colour[0]
+    const colour1 = toneInfo[tone_id].colour[1]
+    const colour2 = toneInfo[tone_id].colour[2]
     
     console.log(tone_id)
     return (
@@ -35,16 +39,24 @@ function TonePage({ tone_id }) {
             style={{
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)',
                 boxSizing: 'content-box',
-                backgroundImage: 'linear-gradient(#5da4dc,#377dc9,#3a0e37)',
+                backgroundImage: `linear-gradient(190deg, ${colour0}, ${colour1}, ${colour2})`,
                 borderRadius: '10px',
                 padding: '2em 5em 2em 5em',
                 maxWidth: '100%',
                 maxHeight: '100%',
-                color: '#ffffff',
+                color: '#ffffff'
               }}
             >
-            <h1>
-              { name + ' ' + <span style={{color: 'blue'}}> emoji </span> }
+            <h1 
+              style={{
+                fontFamily: 'Courier New', 
+                fontWeight: 'lighter', 
+                textTransform: 'uppercase', 
+                letterSpacing: '0.2em',
+                fontSize: '3em'
+                }}
+              >
+              { name + ' ' + emoji}
             </h1>
             <div
               style={{
@@ -58,7 +70,7 @@ function TonePage({ tone_id }) {
             </div>
             <div
               style={{
-                padding: '0em 0em 0em 0 em',
+                padding: '0em 0em 0em 0em',
                 color: '#ffffff'
             }}
             >
