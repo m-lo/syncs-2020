@@ -11,7 +11,7 @@ function App() {
       apikey: 'o0l0OuMGdb1matKG5cVH1y1aeJYa2MVumkXEYoUGGShN',
       url: 'https://cors-anywhere.herokuapp.com/https://iam.cloud.ibm.com/identity/token'
     }),
-    url: 'https://cors-anywhere.herokuapp.com/https://api.au-syd.tone-analyzer.watson.cloud.ibm.com/instances/61f8a1f0-1263-4c20-8215-ad302d4631fc'
+    url: 'https://api.au-syd.tone-analyzer.watson.cloud.ibm.com/instances/61f8a1f0-1263-4c20-8215-ad302d4631fc'
   })
   const text = "Good morning everyone. I see that our quarter four metrics are lower than expected. I know we have had a tough year and moral is down. Can we think of ways to increase our performance next year";
   const toneParams = {
