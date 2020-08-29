@@ -20,6 +20,7 @@ export function analyseTone(text) {
   
   toneAnalyzer.tone(toneParams)
     .then(toneAnalysis => {
+      console.log(toneAnalysis)
       return JSON.stringify(toneAnalysis, null, 2)
     })
     .catch(err => {

@@ -13,6 +13,8 @@ export default function Sender ({ onSend, username }) {
     e.preventDefault()
     if (msg != '') onSend(msg)
     setMsg('')
+    handleAnalysis(username, msg)
+    //analyseTone("")
   }
 
   const handleInput = (e) => {
@@ -32,7 +34,7 @@ export default function Sender ({ onSend, username }) {
     // ]
     // }
     //}
-    const analysis = analyseTone(username, msg)
+    const analysis = JSON.parse(analyseTone(msg))
     console.log("Analysis is " + analysis)
     const profile = getProfile(username)
     let profileTones = profile.tones
@@ -59,7 +61,7 @@ export default function Sender ({ onSend, username }) {
         placeholder='Aa'
         elemAfterInput={
           <Button 
-            onClick={handleSubmit, () => handleAnalysis(username, msg)}
+            onClick={handleSubmit}
           >
         send
       </Button>}
