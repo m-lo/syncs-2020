@@ -32,14 +32,15 @@ function PromptResponse({ tones }) {
   //   'tone_name': 'Sadness'
   // }
 
-  console.log('tones', tones)
-  const validTones = tones.filter(tone => tone.score_valid)
-  const mostImportant = validTones.reduce((prev, current) => (prev.sliding_avg > current.sliding_avg) ? prev : current)
+  // console.log('tones', tones)
+  // const validTones = tones.filter(tone => tone.score_valid)
+  // const mostImportant = validTones.reduce((prev, current) => (prev.sliding_avg > current.sliding_avg) ? prev : current)
+  
   const CustomBody = forwardRef((props, ref) => {
     return (
       <TonePage
         {...props}
-        tone_id={mostImportant.tone_id}
+        tone_id='sadness'
         ref={ref}
       />
     )
@@ -63,11 +64,11 @@ function PromptResponse({ tones }) {
       <ModalTransition>
       {isOpen && (
         <Modal
-        components={{
-          Body: CustomBody,
-        }}
-        onClose={close}
-      />
+          components={{
+            Body: CustomBody,
+          }}
+          onClose={close}
+        />
       )}
     </ModalTransition>
     </>

@@ -100,8 +100,15 @@ export default function Chat({ username }) {
 
   // Show the button if at least one tone's array is valid
   const threshold = 0.8
-  const showPrompt = userProfiles.some(p => p.username !== username && p.tones.some(t => t.sliding_avg >= threshold))
-
+  const detectedTonesHardcode = [{
+    tone_id: 'sadness',
+    score_valid: true,
+    past_scores: [],
+    sliding_avg: 0.9
+  }]
+  // const showPrompt = userProfiles.some(p => p.username !== username && p.tones.some(t => t.sliding_avg >= threshold))
+  const showPrompt = messages.filter(msg => msg.username !== username).length > 2
+  console.log('wtf', showPrompt)
   return (
     <div style={{ height: '100%', display: 'flex', position: 'relative', flexDirection: 'column', justifyContent: 'space-between' }}>
       <div style={{ height: '100%', overflow: 'auto' }}>
