@@ -31,6 +31,8 @@ function PromptResponse({ tones }) {
   //   'tone_id': 'sadness',
   //   'tone_name': 'Sadness'
   // }
+
+  console.log('tones', tones)
   const validTones = tones.filter(tone => tone.score_valid)
   const mostImportant = validTones.reduce((prev, current) => (prev.sliding_avg > current.sliding_avg) ? prev : current)
   const CustomBody = forwardRef((props, ref) => {

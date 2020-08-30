@@ -13,6 +13,7 @@ import { getProfile, userProfiles, addProfile } from '../Start/ToneScores'
 
 export default function Chat({ username }) {
   const [messages, setMessages] = useState([])
+  const [currentAnalysis, setCurrentAnalysis] = useState()
   const [prevAnalysis, setPrevAnalysis] = useState()
   const [detectedTones, setDetectedTones] = useState()
   const profile = getProfile(username)
@@ -38,19 +39,27 @@ export default function Chat({ username }) {
   useEffect(() => {
     let others = messages.filter(msg => msg.username !== username)
     let msg = others.pop()
-    if (msg && msg !== prevAnalysis) {
-      if (!userProfiles.find(profile => profile.username === msg.username)) {
-        addProfile(msg.username)
-      }
-      analyseEffect(msg.username, msg.message)
-      setPrevAnalysis(msg)
+    if (msg && msg.message !== prevAnalysis?.message) {
+      setCurrentAnalysis(msg)
     }
   }, [messages])
+
+  useEffect(() => {
+    if (currentAnalysis && currentAnalysis?.message !== prevAnalysis?.message) {
+      if (!userProfiles.find(profile => profile.username === currentAnalysis.username)) {
+        addProfile(currentAnalysis.username)
+      }
+
+      analyseEffect(currentAnalysis.username, currentAnalysis.message)
+      console.log('anlysing effect', currentAnalysis, prevAnalysis)
+      setPrevAnalysis(currentAnalysis)
+    }
+  }, [currentAnalysis])
 
 
   const analyseEffect = async (username, msg) => {
     const res = await analyseTone(msg)
-    
+    if (!res) return
     let analysisTones = res.document_tone.tones
     let analyseProfile = userProfiles.find(profile => profile.username === username)
     analyseProfile.tones.map(tone => {

@@ -38,7 +38,9 @@ const toneInfo = {
         emoji: '😢',
         description: 'It\'s possible the sender is feeling some sort of loss or disadvantage. Make sure they\'re hanging in okay!',
         detail: [
-            'Big sad'
+            `Sadness is a normal emotion that everyone has from time to time, stemming from a natural reaction to emotional upset or pain. It isn't all too rare for it to be masked by the perception of a "happy life" on social media.`,
+            `If your messages on social media appear to have a sad tone, consider what's happening in your life, don't be afraid to reach out to your friends! Stifling your sadness is not the answer to recovery - instead, being able to rely on friends and family and letting it all out can allow you to recover much more effectively. Bottling it up won't help as sadness can oftentimes evolve into anger or even depression if held in for longer periods of time.`,
+            `If you notice your friends often seem dejected, fatigued or even irritable, check in on them with a simple message. The key is to be an active listener in hearing their problems, as it is important they understand that they have someone to turn to!`
         ]
     },
     analytical: {
