@@ -61,8 +61,8 @@ function TonePage({ tone_id }) {
               </div>
               <div
                 style={{
-                  fontStyle: 'itatlic',
                   fontSize: 14,
+                  fontWeight: 600,
                   //padding: '0em 0em 0em 0em',
                   color: '#ffffff'
               }}

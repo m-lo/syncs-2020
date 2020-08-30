@@ -14,6 +14,7 @@ import { getProfile, userProfiles, addProfile } from '../Start/ToneScores'
 export default function Chat({ username }) {
   const [messages, setMessages] = useState([])
   const [prevAnalysis, setPrevAnalysis] = useState()
+  const [detectedTones, setDetectedTones] = useState()
   const profile = getProfile(username)
   // PROFILE TONE
   // [
@@ -48,22 +49,9 @@ export default function Chat({ username }) {
 
 
   const analyseEffect = async (username, msg) => {
-    // Analysis looks like
-    // {
-    // "document_tone": {
-    // "tones": [
-    //  {
-    //    "score": 0.931457,
-    //    "tone_id": "anger",
-    //    "tone_name": "Anger"
-    //  }
-    // ]
-    // }
-    //}
     const res = await analyseTone(msg)
     
     let analysisTones = res.document_tone.tones
-    console.log(analysisTones)
     let analyseProfile = userProfiles.find(profile => profile.username === username)
     analyseProfile.tones.map(tone => {
       let atone = analysisTones.find(a => a.tone_id === tone.tone_id)
@@ -81,18 +69,10 @@ export default function Chat({ username }) {
         
       }
     })
-    console.log(analyseProfile)
+    setDetectedTones(analyseProfile.tones)
   } // TODO: The scores arrays are only accessed if Watson returns some value for their respective tones. Is this intended?
-  
-  // TODO
-  const tones = [
-    {tone_id: 'sadness',
-    tone_name: 'Sadness',
-    score: '0.512431'}
-  ]
 
   const addMessage = (message) => {
-    console.log('adding message', message)
     setMessages([...messages, message])
   }
 
@@ -105,14 +85,12 @@ export default function Chat({ username }) {
       message,
       timestamp: moment().unix()
     }
-    console.log('sending', message)
     socket.emit('client:message', payload)
     addMessage(payload)
   }
 
   // Show the button if at least one tone's array is valid
-  const threshold = 0.4
-  console.log('profiles', userProfiles)
+  const threshold = 0.2
   const showPrompt = userProfiles.some(p => p.username !== username && p.tones.some(t => t.sliding_avg >= threshold))
 
   return (
@@ -132,7 +110,7 @@ export default function Chat({ username }) {
       </div>
       <div style={{ float: 'bottom', display: 'flex', flexDirection: 'column' }}>
         {showPrompt && <div style={{ marginBottom: 16, alignSelf: 'center' }}>
-          <PromptResponse tones={tones} />
+          <PromptResponse tones={detectedTones} />
         </div>}
         <Sender onSend={handleSend} username={username} />
       </div>

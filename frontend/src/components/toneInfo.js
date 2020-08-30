@@ -8,7 +8,7 @@
 const toneInfo = {
     anger: {
         name: 'Anger',
-        colour: ['#ff5e5e', '#b11d1d', '#661c1c'],
+        colour: ['#b11d1d', '#ff5e5e', '#ff5e5e'],
         emoji: '😠',
         description: 'Could the sender be feeling some sort of injustice, humiliation, or betrayal?',
         detail: ['Social media is often an outlet where users can vent, whether it be actively through verbal attack or passive, with silent hostility. Often, someone\'s anger may be evoked if they feel like there has been some injustice, conflict, humiliation, negligence of betrayal.', 
@@ -17,7 +17,7 @@ const toneInfo = {
     },
     fear: {
         name: 'Fear',
-        colour: ['#15c1d3', '#6a42e3', '#00185a'],
+        colour: ['#345dcc', '#6a42e3', '#b25584'],
         emoji: '😨',
         description: 'Could the sender be cautious of something? Make sure they\'re hanging on okay!',
         detail: ['Often, social media users express every facet of their lives, even reveal some things they would hide otherwise.',
@@ -34,7 +34,7 @@ const toneInfo = {
     },
     sadness: {
         name: 'Sadness',
-        colour: ['#64d2d9', '#5e81ff', '#21373a'],
+        colour: ['#64d2d9', '#5e81ff', '#3954bf'],
         emoji: '😢',
         description: 'It\'s possible the sender is feeling some sort of loss or disadvantage. Make sure they\'re hanging in okay!',
         detail: [

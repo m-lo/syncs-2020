@@ -21,6 +21,7 @@ function PromptResponse({ tones }) {
   const [isOpen, setIsOpen] = useState(false)
   const close = () => setIsOpen(false)
   const open = () => setIsOpen(true)
+
   // Tones - an array of Tones returned by the
   // IBM Tone Analyzer.
 
@@ -30,13 +31,13 @@ function PromptResponse({ tones }) {
   //   'tone_id': 'sadness',
   //   'tone_name': 'Sadness'
   // }
-  const tonesString = tones.map(tone => tone.tone_name).join(', ')
-
+  const validTones = tones.filter(tone => tone.score_valid)
+  const mostImportant = validTones.reduce((prev, current) => (prev.sliding_avg > current.sliding_avg) ? prev : current)
   const CustomBody = forwardRef((props, ref) => {
     return (
       <TonePage
         {...props}
-        tone_id='anger'
+        tone_id={mostImportant.tone_id}
         ref={ref}
       />
     )

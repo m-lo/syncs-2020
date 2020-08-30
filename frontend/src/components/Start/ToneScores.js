@@ -99,8 +99,6 @@ export function addProfile(username) {
         ]
     }
     userProfiles.push(profile)
-    // console.log(`The user '${username}' has been added`)
-    // console.log(userProfiles)
 }
 
 export default function ToneScores(profiles) {
