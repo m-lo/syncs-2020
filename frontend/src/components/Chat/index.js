@@ -90,7 +90,7 @@ export default function Chat({ username }) {
   }
 
   // Show the button if at least one tone's array is valid
-  const threshold = 0.2
+  const threshold = 0.8
   const showPrompt = userProfiles.some(p => p.username !== username && p.tones.some(t => t.sliding_avg >= threshold))
 
   return (
